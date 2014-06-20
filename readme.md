@@ -35,13 +35,13 @@ client.init(function(err){
 
 ## Calling a grain
 
-The client has a 'call' function which allows you to send a message to a grain:
+The client has a `call` function which allows you to send a message to a grain:
 
 ```js
 client.call(grainType, grainId, grainMethod, arguments, callback)
 ```
-* `grainType` The type of your grain interface without the I (i.e. 'Grain1')
-* `grainId` The if of a grain. This can be either an `integer`, `string` (which will be parsed as a guid)  or an array with an extended primary key `[integer/string, string]`
+* `grainType` The name of your grain interface without the I (i.e. 'Grain1')
+* `grainId` The ID of a grain. This can be either an `integer`, `string` (which will be parsed as a guid)  or an array with an extended primary key `[integer/string, string]`
 * `grainMethod` The name of the method you want to call
 * `arguments` An array of arguments
 * `callback` A function which will be called back on completion of the request. For grains with no return value (i.e. they return `Task`) this should be `function(err)`, otherwise this should be `function(err, result)`
@@ -64,7 +64,7 @@ We would use the following code to call it from node:
 
 ```js
 // IGrain1.SetValues
-client.call('Grain1', 0, 'SetValues', ['myString', 100, bool], function(err){
+client.call('Grain1', 0, 'SetValues', ['myString', 100, true], function(err){
 	if (err) console.log(err);
 });
 
