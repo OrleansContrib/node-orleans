@@ -53,13 +53,13 @@ public class Startup \n\
 
 			if (hasReturnValue){
 				var innerCs = "\
-				var grain = " + grainType + "Factory<int>.GetGrain(" + formatId(grainId) + ");\n\
+				var grain = " + grainType + "Factory.GetGrain(" + formatId(grainId) + ");\n\
 				var result = await grain." + grainMethod + "(" + argsToString(arguments) + ");\n\
 				return result as object;\n\
 				";
 			} else {
 				var innerCs = "\
-				var grain = " + grainType + "Factory<int>.GetGrain(" + formatId(grainId) + ");\n\
+				var grain = " + grainType + "Factory.GetGrain(" + formatId(grainId) + ");\n\
 				await grain." + grainMethod + "(" + argsToString(arguments) + ");\n\
 				return null;\n\
 				";

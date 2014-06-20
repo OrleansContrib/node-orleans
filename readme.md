@@ -13,7 +13,8 @@ $ npm install node-orleans
 Ensure the following are in the same directory as your node.js application:
 
 * `Orleans.dll`
-* Your grain interfaces dll
+* `Microsoft.WindowsAzure.StorageClient.dll`
+* `Your grain interfaces.dll`
 * `ClientConfiguration.xml`
 
 ## Initialising the client
@@ -21,7 +22,7 @@ Ensure the following are in the same directory as your node.js application:
 First you need to initialise the client:
 
 ```js
-var orleans = require('orleans');
+var orleans = require('node-orleans');
 var client = orleans({
 	grainDll : "MyGrainInterfaces.dll", 	// the assembly containing your grain interfaces
 	grainNamespace : "MyGrainInterfaces"	// the namespace of your grain interfaces
